@@ -26,6 +26,7 @@ public class ShootingController : MonoBehaviour {
 			float angle = Vector3.Angle (upVector, direction);
 			//the pivot point is set when importing the sprite
 			Quaternion rotation = Quaternion.AngleAxis (angle, new Vector3 (0, 0, 1));
+			cannon.rotation = rotation;
 		}
 	}
 }
