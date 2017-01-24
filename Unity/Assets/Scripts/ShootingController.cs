@@ -23,9 +23,15 @@ public class ShootingController : MonoBehaviour {
 			Vector3 direction = enemyPosition - stationPosition;
 			Vector3 upVector = Vector3.up;
 
+			//check if on the right, then rotate in the other direction
+			float inverseDirection = 1.0f;
+			if (direction.x > 0) {
+				inverseDirection = -1.0f;
+			}
+
 			float angle = Vector3.Angle (upVector, direction);
 			//the pivot point is set when importing the sprite
-			Quaternion rotation = Quaternion.AngleAxis (angle, new Vector3 (0, 0, 1));
+			Quaternion rotation = Quaternion.AngleAxis (angle * inverseDirection, new Vector3 (0, 0, 1));
 			cannon.rotation = rotation;
 		}
 	}
