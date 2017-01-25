@@ -7,7 +7,8 @@ public class Shoot : MonoBehaviour {
     //where the projectile comes from
     public GameObject cannonTip;
     public GameObject projectile;
-    public GameObject target;
+    
+	public ShootingController shootingController;
 
 	// Use this for initialization
 	void Start () {
@@ -29,8 +30,12 @@ public class Shoot : MonoBehaviour {
         tempProjectile.name = this.GetComponentInChildren<TextMesh>().text;
 
         //target position
-        Vector2 position = target.transform.position - cannonTip.transform.position;
-
+		Vector2 position;
+		if (shootingController.target) {
+			position = shootingController.target.transform.position - cannonTip.transform.position;
+		} else {
+			position = gameObject.transform.forward;
+		}
         //control the rigidbody component of projectile to shoot it
         Rigidbody2D tempRigidbody;
         tempRigidbody = tempProjectile.GetComponent<Rigidbody2D>();

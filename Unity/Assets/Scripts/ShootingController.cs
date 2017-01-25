@@ -8,7 +8,7 @@ public class ShootingController : MonoBehaviour {
 	public Transform cannonTip;
 	public Transform cannon;
 	public Transform cannonMount;
-
+	public float cannonMovementSpeed = 0.1f;
 	public GameObject target;
 
 	public void Update(){
@@ -32,7 +32,7 @@ public class ShootingController : MonoBehaviour {
 			float angle = Vector3.Angle (upVector, direction);
 			//the pivot point is set when importing the sprite
 			Quaternion rotation = Quaternion.AngleAxis (angle * inverseDirection, new Vector3 (0, 0, 1));
-			cannon.rotation = rotation;
+			cannon.rotation = Quaternion.Lerp(cannon.rotation, rotation, cannonMovementSpeed * Time.deltaTime);
 		}
 	}
 }

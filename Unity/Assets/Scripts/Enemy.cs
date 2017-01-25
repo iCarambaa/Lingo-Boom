@@ -6,8 +6,23 @@ public class Enemy : MonoBehaviour {
 
 	public float speed = 10.0f;
 	public ShootingController shootingController;
-	void OnMouseDown() {
+	public GameController gameController;
+
+	public void Start(){
+		if (!shootingController) {
+			shootingController = GameObject.Find ("ShootingController").GetComponent<ShootingController>();
+		}
+		if (!gameController) {
+			gameController = GameObject.Find ("GameController").GetComponent<GameController> ();
+		}
+	}
+
+	private void OnMouseDown() {
 		shootingController.target = gameObject;
+	}
+
+	public void OnDestroy(){
+		gameController.searchNewTarget (gameObject);
 	}
 
 	void Update() {
