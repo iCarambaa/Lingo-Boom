@@ -18,5 +18,6 @@ public class DieOnContact : MonoBehaviour {
         //destroy object when projectile collides with it
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
+        Destroy(collision.gameObject);
     }
 }
