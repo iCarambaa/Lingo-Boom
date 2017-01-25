@@ -7,8 +7,6 @@ public class Shoot : MonoBehaviour {
     //where the projectile comes from
     public GameObject cannonTip;
     public GameObject projectile;
-    public float projectileForce;
-
     public GameObject target;
 
 	// Use this for initialization
@@ -27,6 +25,8 @@ public class Shoot : MonoBehaviour {
         //instantiate projectile
         GameObject tempProjectile;
         tempProjectile = Instantiate(projectile, cannonTip.transform.position, cannonTip.transform.rotation) as GameObject;
+        //assign a tab to the projectile - a word that we want to match with enemy
+        tempProjectile.name = this.GetComponentInChildren<TextMesh>().text;
 
         //target position
         Vector2 position = target.transform.position - cannonTip.transform.position;
@@ -37,6 +37,7 @@ public class Shoot : MonoBehaviour {
 
         //shoot the projectile
         tempRigidbody.velocity = position * 10;
+
 
         //after 2 second projectile is automatically destroyed if not used
         Destroy(tempProjectile, 2.0f);
