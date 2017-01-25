@@ -6,7 +6,7 @@ public class DieOnContact : MonoBehaviour
 {
 
     public GameObject explosionPrefab;
-
+	public string article;
     void OnMouseDown()
     {
         //Instantiate (explosionPrefab, transform.position, transform.rotation);
@@ -18,7 +18,7 @@ public class DieOnContact : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //projectile and enemy words match
-        if (collision.gameObject.name.Equals("DER"))
+        if (collision.gameObject.name.Equals(article))
         {
             //destroy object when projectile collides with it
             Instantiate(explosionPrefab, transform.position, transform.rotation);
