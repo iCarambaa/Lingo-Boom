@@ -29,5 +29,6 @@ public class Enemy : MonoBehaviour {
 		Vector3 position = transform.position;
 		position.y = position.y - (speed * Time.deltaTime);
 		transform.position = position;
+
 	}
 }
