@@ -17,14 +17,18 @@ public class DieOnContact : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //projectile and enemy words match
+        if(collision.gameObject.tag.Equals("Planet"))
+        {
+            return;
+        }
+        //projectile and enemy words match - enemy hit
         if (collision.gameObject.name.Equals(article))
         {
             //destroy object when projectile collides with it
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
-        }
-        else //give a warning
+        } 
+        else//give a warning
         {
             Renderer renderer = gameObject.GetComponent<Renderer>();
             Color color = renderer.material.color;
@@ -32,6 +36,8 @@ public class DieOnContact : MonoBehaviour
             //changing color
             StartCoroutine(Blink(renderer, color, blink));
         }
+
+        
 
         //destroy projectile
         Destroy(collision.gameObject);

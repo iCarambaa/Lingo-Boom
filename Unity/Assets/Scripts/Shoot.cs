@@ -23,6 +23,7 @@ public class Shoot : MonoBehaviour {
     //modify later - to button press
     private void OnMouseDown()
     {
+        
         //instantiate projectile
         GameObject tempProjectile;
         tempProjectile = Instantiate(projectile, cannonTip.transform.position, cannonTip.transform.rotation) as GameObject;
@@ -46,5 +47,6 @@ public class Shoot : MonoBehaviour {
 
         //after 2 second projectile is automatically destroyed if not used
         Destroy(tempProjectile, 2.0f);
+        
     }
 }
