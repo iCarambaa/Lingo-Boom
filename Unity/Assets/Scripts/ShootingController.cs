@@ -10,6 +10,7 @@ public class ShootingController : MonoBehaviour {
 	public Transform cannonMount;
 	public float cannonMovementSpeed = 0.1f;
 	public GameObject target;
+    public SpriteRenderer crosshair;
 
 	public void Update(){
 		updateRotation ();
@@ -20,6 +21,7 @@ public class ShootingController : MonoBehaviour {
 			Vector3 enemyPosition = target.transform.position;
 			Vector3 stationPosition = cannonMount.position;
 
+            crosshair.transform.position = enemyPosition;
 			Vector3 direction = enemyPosition - stationPosition;
 			Vector3 upVector = Vector3.up;
 
