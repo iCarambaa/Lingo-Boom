@@ -8,6 +8,7 @@ public class EarthHit : MonoBehaviour {
     public GameObject playerLife;
     public int lives;
     public Sprite emptyLife;
+    
 
     // Use this for initialization
     void Start () {
