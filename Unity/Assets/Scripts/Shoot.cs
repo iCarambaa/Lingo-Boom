@@ -24,8 +24,8 @@ public class Shoot : MonoBehaviour {
     private void OnMouseDown()
     {
 		Transform cannonTip = shootingController.getNextTip ();
-		Debug.Log (cannonTip);
-        //instantiate projectile
+
+		//instantiate projectile
         GameObject tempProjectile;
         tempProjectile = Instantiate(projectile, cannonTip.transform.position, cannonTip.transform.rotation) as GameObject;
         //assign a tab to the projectile - a word that we want to match with enemy

@@ -15,6 +15,7 @@ public class ShootingController : MonoBehaviour {
 
 	public void Update(){
 		updateRotation ();
+		crosshair.transform.position = Vector2.Lerp (crosshair.transform.position, target.transform.position, 30.0f * Time.deltaTime);
 	}
 
 	public Transform getNextTip() {
@@ -28,12 +29,14 @@ public class ShootingController : MonoBehaviour {
 		return lastUsedTip;
 	}
 
+
+
 	private void updateRotation(){
 		if (target) {
 			Vector3 enemyPosition = target.transform.position;
 			Vector3 stationPosition = cannonMount.position;
 
-            crosshair.transform.position = enemyPosition;
+            //crosshair.transform.position = enemyPosition;
 			Vector3 direction = enemyPosition - stationPosition;
 			Vector3 upVector = Vector3.up;
 
