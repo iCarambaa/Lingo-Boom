@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
 	//control enemy spawning
@@ -25,6 +25,11 @@ public class GameController : MonoBehaviour {
 
 	public ShootingController shootingController;
 
+	public GameObject gameOverScreen;
+	public Text scoreLabel;
+
+	private int score = 0;
+
 	//save the time when we are allowed to spawn a new enemy
 	private float nextSpawnTime = 0.0f;
 
@@ -46,9 +51,16 @@ public class GameController : MonoBehaviour {
 		shootingController.target = target;
 	}
 
+	public void assignPoints(int points){
+		score += 1;
+	}
+
+	public void gameOver(){
+		gameOverScreen.GetComponent<SpriteRenderer> ().enabled = true;
+	}
 	
-	// Update is called once per frame
 	void Update () {
+		scoreLabel.text = score.ToString();
 		enemies.RemoveAll (GameObject => GameObject == null);
 		//check if maximum number is already onscreen
 		//and debounce spawning

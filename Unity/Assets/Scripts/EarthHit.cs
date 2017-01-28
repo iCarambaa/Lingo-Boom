@@ -9,7 +9,7 @@ public class EarthHit : MonoBehaviour {
     public int lives;
     public Sprite emptyLife;
     
-
+	public GameController gameController;
     // Use this for initialization
     void Start () {
         
@@ -25,14 +25,14 @@ public class EarthHit : MonoBehaviour {
         //TO DO: decrease player life
         SpriteRenderer[] live = playerLife.transform.GetComponentsInChildren<SpriteRenderer>();
 
-        if(lives > 0)
+        if(lives > 1)
         {
             lives--;
             live[lives % 3].sprite = emptyLife;
             
         } else
         {
-            //game over
+			gameController.gameOver ();
         }
 
         //TO DO: stop tracking target that has damaged player

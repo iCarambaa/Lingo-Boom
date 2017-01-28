@@ -30,6 +30,8 @@ public class DieOnContact : MonoBehaviour
             //destroy object when projectile collides with it
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
+			GameController controller = GameObject.Find ("GameController").GetComponent<GameController>();
+			controller.assignPoints (1);
         } 
         else//give a warning
         {
