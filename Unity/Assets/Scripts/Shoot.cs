@@ -7,7 +7,8 @@ public class Shoot : MonoBehaviour {
     //where the projectile comes from
     public GameObject cannonTip;
     public GameObject projectile;
-    
+	public string name;
+
 	public ShootingController shootingController;
 
 	// Use this for initialization
@@ -28,7 +29,7 @@ public class Shoot : MonoBehaviour {
         GameObject tempProjectile;
         tempProjectile = Instantiate(projectile, cannonTip.transform.position, cannonTip.transform.rotation) as GameObject;
         //assign a tab to the projectile - a word that we want to match with enemy
-        tempProjectile.name = this.GetComponentInChildren<TextMesh>().text;
+		tempProjectile.name = name;
 
         //target position
 		Vector2 position;
