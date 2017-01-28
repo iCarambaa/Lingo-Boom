@@ -19,6 +19,9 @@ public class DieOnContact : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Planet"))
         {
+			//Just destroy it for now
+			Instantiate(explosionPrefab, transform.position, transform.rotation);
+			Destroy(gameObject);
             return;
         }
         //projectile and enemy words match - enemy hit
