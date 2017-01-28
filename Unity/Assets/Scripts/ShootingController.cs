@@ -4,16 +4,28 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour {
 
-
-	public Transform cannonTip;
+	public List<Transform> cannonTips;
 	public Transform cannon;
 	public Transform cannonMount;
 	public float cannonMovementSpeed = 0.1f;
 	public GameObject target;
     public SpriteRenderer crosshair;
 
+	private Transform lastUsedTip;
+
 	public void Update(){
 		updateRotation ();
+	}
+
+	public Transform getNextTip() {
+		if (!lastUsedTip) {
+			lastUsedTip = cannonTips [0];
+			return lastUsedTip;
+		}
+		int next = (cannonTips.IndexOf (lastUsedTip) + 1) % cannonTips.Count;
+		lastUsedTip = cannonTips [next];
+		Debug.Log (next);
+		return lastUsedTip;
 	}
 
 	private void updateRotation(){

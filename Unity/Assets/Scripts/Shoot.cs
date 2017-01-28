@@ -5,9 +5,8 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
     //where the projectile comes from
-    public GameObject cannonTip;
     public GameObject projectile;
-	public string name;
+	public string article;
 
 	public ShootingController shootingController;
 
@@ -24,12 +23,13 @@ public class Shoot : MonoBehaviour {
     //modify later - to button press
     private void OnMouseDown()
     {
-        
+		Transform cannonTip = shootingController.getNextTip ();
+		Debug.Log (cannonTip);
         //instantiate projectile
         GameObject tempProjectile;
         tempProjectile = Instantiate(projectile, cannonTip.transform.position, cannonTip.transform.rotation) as GameObject;
         //assign a tab to the projectile - a word that we want to match with enemy
-		tempProjectile.name = name;
+		tempProjectile.name = article;
 
         //target position
 		Vector2 position;
