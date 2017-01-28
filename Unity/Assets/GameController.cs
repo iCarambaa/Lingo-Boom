@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour {
 		currentNumberOfEnemies = startNumberOfEnemies;
 		currentSeccondsBetweenSpawn = startSecondsBetweenSpawn;
 		currentEnemySpeed = startEnemySpeed;
+		Application.targetFrameRate = 60;
 	}
 
 	public void searchNewTarget(GameObject exclude) {
