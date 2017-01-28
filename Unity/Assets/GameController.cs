@@ -5,9 +5,19 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
 	//control enemy spawning
-	public int maxNumberOfEnemies = 3;
-	public float secondsBetweenSpawn = 2;
+	public float maxNumberOfEnemies = 3;
+	public float startNumberOfEnemies = 1;
+	private float currentNumberOfEnemies;
 
+	public float minSecondsBetweenSpawn = 2;
+	public float startSecondsBetweenSpawn = 3;
+	private float currentSeccondsBetweenSpawn;
+
+	public float startEnemySpeed = 0.5f;
+	public float maxEnemySpeed = 3.0f;
+	private float currentEnemySpeed;
+
+	public float speedUpRate = 100.0f;
 	//Keep references to all enemies currently onscreen
 	public List<GameObject> enemies;
 	public GameObject[] enemyPrefabs;
@@ -17,6 +27,12 @@ public class GameController : MonoBehaviour {
 
 	//save the time when we are allowed to spawn a new enemy
 	private float nextSpawnTime = 0.0f;
+
+	public void Start(){
+		currentNumberOfEnemies = startNumberOfEnemies;
+		currentSeccondsBetweenSpawn = startSecondsBetweenSpawn;
+		currentEnemySpeed = startEnemySpeed;
+	}
 
 	public void searchNewTarget(GameObject exclude) {
 		enemies.RemoveAll (GameObject => GameObject == null || GameObject == exclude);
@@ -36,12 +52,21 @@ public class GameController : MonoBehaviour {
 		//check if maximum number is already onscreen
 		//and debounce spawning
 		//always spawn if only one enemy left
-		if ((enemies.Count < maxNumberOfEnemies && nextSpawnTime < Time.time) || enemies.Count < 2) {
+		if ((enemies.Count < currentNumberOfEnemies && nextSpawnTime < Time.time) || enemies.Count < 2) {
 			GameObject prefab = enemyPrefabs [Random.Range(0, enemyPrefabs.Length)];
 			Transform spawn = spawnPoints [Random.Range(0, spawnPoints.Length)].transform;
 			GameObject newEnemy = Instantiate (prefab, spawn.position, spawn.rotation);
+			Enemy enemy = newEnemy.GetComponent<Enemy> ();
+			enemy.speed = currentEnemySpeed;
 			enemies.Add (newEnemy);
-			nextSpawnTime = Time.time + secondsBetweenSpawn;
+			nextSpawnTime = Time.time + currentSeccondsBetweenSpawn;
 		}
+		speedUp ();
+	}
+
+	private void speedUp(){
+		currentEnemySpeed = Mathf.Lerp (startEnemySpeed, maxEnemySpeed, Time.time / speedUpRate);
+		currentNumberOfEnemies = Mathf.Lerp (startNumberOfEnemies, maxNumberOfEnemies, Time.time / speedUpRate);
+		currentSeccondsBetweenSpawn = Mathf.Lerp (startSecondsBetweenSpawn, minSecondsBetweenSpawn, Time.time / speedUpRate);
 	}
 }
