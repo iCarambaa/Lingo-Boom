@@ -23,6 +23,10 @@ public class Shoot : MonoBehaviour {
     //modify later - to button press
     private void OnMouseDown()
     {
+		if (shootingController.isRecharging ()) {
+			return;
+		}
+		shootingController.shoot ();
 		Transform cannonTip = shootingController.getNextTip ();
 
 		//instantiate projectile
