@@ -6,6 +6,7 @@ public class ShootingController : MonoBehaviour {
 
 	public List<Transform> cannonTips;
 	public Transform cannon;
+	public Animator cannonAnimator;
 	public Transform cannonMount;
 	public float cannonMovementSpeed = 0.1f;
 	public GameObject target;
@@ -51,5 +52,17 @@ public class ShootingController : MonoBehaviour {
 			Quaternion rotation = Quaternion.AngleAxis (angle * inverseDirection, new Vector3 (0, 0, 1));
 			cannon.rotation = Quaternion.Lerp(cannon.rotation, rotation, cannonMovementSpeed * Time.deltaTime);
 		}
+	}
+
+	public bool isRecharging(){
+		return cannonAnimator.GetBool ("recharging");
+	}
+
+	public void shoot(){
+		cannonAnimator.SetBool ("recharging", true);
+	}
+
+	public void didRecharge(){
+		cannonAnimator.SetBool ("recharging", false);
 	}
 }
