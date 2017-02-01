@@ -8,11 +8,17 @@ public class Shoot : MonoBehaviour {
     public GameObject projectile;
 	public string article;
 
-	public ShootingController shootingController;
+	public SpriteRenderer spriteRenderer;
 
+	public ShootingController shootingController;
+	public Color activeColor;
+	private Color defaultColor;
 	// Use this for initialization
 	void Start () {
-		
+		if (!spriteRenderer) {
+			spriteRenderer = GetComponent<SpriteRenderer> ();
+			defaultColor = spriteRenderer.color;
+		}
 	}
 	
 	// Update is called once per frame
@@ -26,6 +32,7 @@ public class Shoot : MonoBehaviour {
 		if (shootingController.isRecharging ()) {
 			return;
 		}
+		spriteRenderer.color = activeColor;
 		shootingController.shoot ();
 		Transform cannonTip = shootingController.getNextTip ();
 
@@ -54,4 +61,8 @@ public class Shoot : MonoBehaviour {
         Destroy(tempProjectile, 2.0f);
         
     }
+
+	private void OnMouseUp() {
+		spriteRenderer.color = defaultColor;
+	}
 }
