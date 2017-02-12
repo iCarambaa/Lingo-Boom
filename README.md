@@ -35,11 +35,11 @@ In order to solve these different problems we decided to create a game. In a gam
 In our first concepts we had to competing ideas, one where you get the word and select the article and one where you get an article and find a matching word. We liked the idea of having words falling down towards the player because it sets a time limit which can be perceived without any distraction (compared to e.g. a bar for a time limit).
 
 #### Select Word
-![Word select](images/Lingo1.pdf)
+![Word select](images/Lingo1.png)
 
 In this concept you get new Articles flowing in your gun from the right and have to select one of the Words falling down. This means the user has to read the article and basically "check" every word until he finds a fitting word.
 #### Select Article
-![Article Select](images/Lingo2.pdf)
+![Article Select](images/Lingo2.png)
 
 Here the user sees the words falling down and has to select one of the articles to shoot. In this first iteration the gun pointed automatically at the closes enemy which could not be changed.
 
