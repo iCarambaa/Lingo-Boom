@@ -1,6 +1,8 @@
 # Lingo Boom
 Lingo Boom a language learning app developed by team DIScovery for the class Designing Interactive Systems at RWTH Aachen University.
 
+Try it out: [Marvel UI Prototype](https://marvelapp.com/77gj0d4), [Unity Gameplay Prototype](https://lingoboom.icaramba.it)
+
 The basic idea is to simplify learning articles and vocabulary for the German language by repetition. It is designed to allow quick sessions on your mobile device whenever there is a small time pocket.
 
 It's designed for people like [Lizzy](Persona2-sherry.png) and [Tin Tin](Persona-sherry.png), who want to learn a language but not by sitting down and studying for hours.
@@ -48,7 +50,7 @@ Here the user sees the words falling down and has to select one of the articles 
 After asking some testers we could clearly see that selecting the article is the better fit. There is a clear perceive - classify - select path for every word which can quickly be performed. In the other approach the user needed to be kind of lucky to look at the correct word first, otherwise he needs additional time to look at each word which leads to frustration in such a fast paced game. 
 
 ### Further prototypes
-After we had collected this feedback and gathered those impressions we needed to create a higher level prototype. We really wanted to test the feeling when playing the game, including the fast pace, that is crucial for the game and the learning experience, therefore we decided to create the game in Unity. We decided to do two separate prototypes, one for the UI Part in Marvel and the Game part in Unity. We iterated quickly over these prototypes and added new features and changed the graphics, therefore these started as medium fidelity prototypes but became high fidelity prototypes in the end.
+After we had collected this feedback and gathered those impressions we needed to create a higher level prototype. We really wanted to test the feeling when playing the game, including the fast pace, that is crucial for the game and the learning experience, therefore we decided to create the game in Unity. We decided to do two separate prototypes, one for the UI Part in Marvel and the Game part in Unity. We iterated quickly over these prototypes and added new features and changed the graphics, therefore these started as medium fidelity prototypes but became high fidelity prototypes in the end. Also have a look at our [Lingo Boom Storyboard](Storyboard.pdf).
 
 In the Unity prototype we observed that at times it is not easy to detect which article is currently selected, therefore we added a crosshair to indicate the currently targeted word. Many users tried to select a different word by tapping on it and requested that they want to be able to select a different word manually. Interestingly, after we added this feature, nobody used it any more. We learned that this feature doesn’t make any sense in the gameplay but if we ask users to test the game they will check if this feature exists - no matter if it is useful.
 
@@ -61,4 +63,4 @@ As a consequence, users figured out, that they can just smash the buttons and sh
 ##Final assembly
 We managed to link the marvel prototype to the unity prototype to prevent confusing our testers with switching between apps. Our final version offers a seamless UI which lets you choose between different word sets, and offers a truly unique and effective learning experience.
 
-![Lingo Boom Storyboard](Storyboard.pdf)
+Try it out: [Marvel UI Prototype](https://marvelapp.com/77gj0d4), [Unity Gameplay Prototype](https://lingoboom.icaramba.it)
