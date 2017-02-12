@@ -39,7 +39,7 @@ In our first concepts we had to competing ideas, one where you get the word and 
 
 In this concept you get new Articles flowing in your gun from the right and have to select one of the Words falling down. This means the user has to read the article and basically "check" every word until he finds a fitting word.
 #### Select Article
-![Article Select](images/Lingo2.png)
+![Article Select](images/Lingo3.png)
 
 Here the user sees the words falling down and has to select one of the articles to shoot. In this first iteration the gun pointed automatically at the closes enemy which could not be changed.
 
