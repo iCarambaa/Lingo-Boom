@@ -3,8 +3,8 @@
 ## New game
          
 ## Setting
-  * volumn 
-  * background music( off/ on)
+  * volume 
+  * background music( on / off)
   * level
   * etc
 
@@ -30,6 +30,7 @@
    * Main menu
    * restart game 
    * continue
+
 # 5. Game over
 * final scores
 * Best Record
