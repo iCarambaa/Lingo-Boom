@@ -1,5 +1,5 @@
 # Lingo Boom
-Lingo Boom a language learning app developed by team DIScovery for the class Designing Interactive Systems at RWTH Aachen University.
+Lingo Boom is a language learning app developed by team DIScovery for the class Designing Interactive Systems at RWTH Aachen University.
 
 Try it out: [Marvel UI Prototype](https://marvelapp.com/77gj0d4), [Unity Gameplay Prototype](https://lingoboom.icaramba.it)
 
