@@ -3,6 +3,8 @@ Lingo Boom a language learning app developed by team DIScovery for the class Des
 
 Try it out: [Marvel UI Prototype](https://marvelapp.com/77gj0d4), [Unity Gameplay Prototype](https://lingoboom.icaramba.it)
 
+Or watch our video trailer: [Lingo Boom Trailer](https://drive.google.com/file/d/0B-iyrq2lCsklWXctcVZLb293eWM/view)
+
 The basic idea is to simplify learning articles and vocabulary for the German language by repetition. It is designed to allow quick sessions on your mobile device whenever there is a small time pocket.
 
 It's designed for people like [Lizzy](Persona2-sherry.png) and [Tin Tin](Persona-sherry.png), who want to learn a language but not by sitting down and studying for hours.
